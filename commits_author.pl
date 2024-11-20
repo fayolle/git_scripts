@@ -88,8 +88,8 @@ sub git_stats {
         }
         elsif ($line =~ /^Date:/) {
             my $date = substr($line, 6); # Remove "Date: "
-            $first{$author} = $date if !$first{$author};
-            $last{$author} = $date;
+            $last{$author} = $date if !$first{$author};
+            $first{$author} = $date;
         }
         elsif ($line =~ /^[0-9]/) {
             my ($insertions, $deletions, $filename) = split(/\s+/, $line);
